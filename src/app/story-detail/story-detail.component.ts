@@ -13,7 +13,6 @@ import { StoryService } from '../story.service';
 export class StoryDetailComponent implements OnInit {
   storyId: number;
   storyToDisplay: Story;
-  nextChoice: Story;
 
   constructor(
     private route: ActivatedRoute,
@@ -32,8 +31,8 @@ export class StoryDetailComponent implements OnInit {
     this.route.params.forEach((urlParametersArray) => {
       this.storyId = parseInt(urlParametersArray['id']);
     });
-    this.nextChoice = this.story.nextStory1;
-    this.storyToDisplay = this.storyService.getStoryById(this.storyId);
+    var story = this.storyService.getStoryById(this.storyId);
+    this.storyToDisplay = this.storyService.getStoryById(story.nextStory1);
   }
 
 }
