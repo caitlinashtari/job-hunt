@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { Story } from '../story.model';
 import { StoryService } from '../story.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-story-detail',
@@ -17,7 +18,8 @@ export class StoryDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private location: Location,
-    private storyService: StoryService
+    private storyService: StoryService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -33,6 +35,7 @@ export class StoryDetailComponent implements OnInit {
     });
     var story = this.storyService.getStoryById(this.storyId);
     this.storyToDisplay = this.storyService.getStoryById(story.nextStory1);
+    this.router.navigate(['storys', story.nextStory1]);
   }
 
 }
