@@ -8,13 +8,15 @@ import { StartComponent } from './start/start.component';
 import { routing } from './app.routing';
 import { StoryComponent } from './story/story.component';
 import { StoryDetailComponent } from './story-detail/story-detail.component';
+import { CodeSchoolComponent } from './code-school/code-school.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StartComponent,
     StoryComponent,
-    StoryDetailComponent
+    StoryDetailComponent,
+    CodeSchoolComponent
   ],
   imports: [
     BrowserModule,

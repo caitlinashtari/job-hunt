@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Job Hunt';
+
+  masterUser = {
+    name: "",
+    score: 0
+  };
 }

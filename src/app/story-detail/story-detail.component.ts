@@ -38,4 +38,13 @@ export class StoryDetailComponent implements OnInit {
     this.router.navigate(['storys', story.nextStory1]);
   }
 
+  nextStory2(){
+    this.route.params.forEach((urlParametersArray) => {
+      this.storyId = parseInt(urlParametersArray['id']);
+    });
+    var story = this.storyService.getStoryById(this.storyId);
+    this.storyToDisplay = this.storyService.getStoryById(story.nextStory2);
+    this.router.navigate(['storys', story.nextStory2]);
+  }
+
 }
